@@ -59,6 +59,20 @@ a.closeLink {
     text-shadow: 1px 1px 5px #525252;
 }
 
+.punched {
+    text-shadow: 1px 1px 1px #ffffff;
+}
+
+.icon-small{
+    width: 20px;
+    padding-top: 4px;
+}
+
+.icon-small:hover {
+    width: 24px;
+    padding-top: 2px;
+}
+
 /* button from http://css3button.net/ */
 .button {
     display: block;
@@ -98,16 +112,6 @@ a.closeLink {
 		inset 0px 0px 1px rgba(255,255,255,1);
 }
 
-.punched {
-    text-shadow: 1px 1px 1px #ffffff;
-}
-
-.icon-small{
-    width: 20px;
-    padding-top: 4px;
-}
-
-.icon-small:hover {
-    width: 24px;
-    padding-top: 2px;
+#mywindow3 {
+    padding: 20px 10px;
 }

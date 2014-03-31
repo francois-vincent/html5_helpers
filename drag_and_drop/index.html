@@ -19,8 +19,17 @@
         <p class='punched'>This is a closable window !</p>
         <a href="#" class="button">Click Me!</a>
     </div>
+    <div id="mywindow3" style="left: 600px; position:absolute">
+        <p class='text-shadow'>This is a draggable window !</p>
+        <a href="#" class="button">Click Me!</a>
+    </div>
 </body>
 <script>
-    window.onload = dragDrop.drag_drop_init();
+    window.onload = function() {
+        // automatic management of all 'draggable' classes
+        dragDrop.drag_drop_init();
+        // manual addition of a element
+        dragDrop.drag_drop_init('mywindow3');
+    }
 </script>
 </html>

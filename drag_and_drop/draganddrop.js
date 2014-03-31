@@ -34,10 +34,14 @@ dragDrop = {
     allowed_position: ['absolute', 'fixed'],
     drag_drop_list: [],
     default_title: 'Window ',
-    drag_drop_init: function() {
-        var elems = document.getElementsByClassName('draggable');
-        for (var el=0; el<elems.length; el++) {
-            dragDrop.drag_drop_list.push(new dragDrop.constr(elems[el], el));
+    drag_drop_init: function(element) {
+        if (element)
+            dragDrop.drag_drop_list.push(new dragDrop.constr(element, dragDrop.drag_drop_list.length))
+        else {
+            var elems = document.getElementsByClassName('draggable');
+            for (var el=0; el<elems.length; el++) {
+                dragDrop.drag_drop_list.push(new dragDrop.constr(elems[el], el));
+            }
         }
     },
     constr: function(elem, index) {
