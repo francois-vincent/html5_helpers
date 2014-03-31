@@ -11,7 +11,11 @@ body {
 
 .dragged {
     box-shadow: 6px 6px 5px #656565;
-	z-index: 100;
+	z-index: 10;
+}
+
+.closable {
+    background-color: rgba(245, 134, 48, 0.45);
 }
 
 div.handler {
@@ -28,7 +32,7 @@ div.handler {
     border-radius: 3px 3px 0px 0px;
     text-shadow: 1px 1px 0px rgba(5, 5, 5, 1);
 	cursor: move;
-	z-index: 101;
+	z-index: 1;
 }
 
 a.closeLink {
@@ -43,7 +47,7 @@ a.closeLink {
 	background-color: #050790;
     border-radius: 0px 3px 0px 0px;
 	cursor: pointer;
-	z-index: 102;
+	z-index: 2;
 }
 
 .text-shadow {
@@ -103,14 +107,4 @@ a.closeLink {
 .icon-small:hover {
     width: 24px;
     padding-top: 2px;
-}
-
-#mywindow2 {
-    top: 200px;
-    background-color: rgba(245, 134, 48, 0.39);
-}
-
-#mywindow3 {
-    top: 400px;
-    background-color: rgba(245, 134, 48, 0.39);
 }

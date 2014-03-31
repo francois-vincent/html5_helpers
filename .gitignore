@@ -2,7 +2,6 @@
 *.pyc
 *.pyo
 *.mo
-crispyforms/static/
 logs/
 
 # Editor files
