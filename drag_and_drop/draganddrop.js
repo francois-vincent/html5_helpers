@@ -29,7 +29,7 @@ function getStyle(el,styleProp)
 
 dragDrop = {
     id_drag_drop: 0,
-    handlerHTML: ['<div class="handler" id="', '" onmousedown="dragDrop.startDragMouse(event)"></div>'],
+    handlerHTML: ['<div class="handler" id="', '" onmousedown="dragDrop.startDragMouse(event,',')"></div>'],
     closeHTML: ['<a href="#" class="closeLink" id="','" onclick="dragDrop.closeElement(',')"><img class="icon-small" src="iconmonstr-x-mark-4-icon.svg"></a>'],
     allowed_position: ['absolute', 'fixed'],
     drag_drop_list: [],
@@ -57,7 +57,7 @@ dragDrop = {
         }
         // add handler with title
         var id_handler = 'id_handler_' + dragDrop.id_drag_drop;
-        elem.innerHTML += dragDrop.handlerHTML.join(id_handler);
+        elem.innerHTML += dragDrop.handlerHTML[0]+id_handler+dragDrop.handlerHTML[1]+index+dragDrop.handlerHTML[2];
         this.handler_elem = document.getElementById(id_handler);
         this.handler_elem.innerHTML = elem.getAttribute('windowTitle');
         this.handler_elem.js_object = this;
@@ -67,16 +67,17 @@ dragDrop = {
         dragDrop.id_drag_drop++;
     },
     // applies on close_elem
-    closeElement: function(e) {
-        var obj = dragDrop.drag_drop_list[e];
+    closeElement: function(index) {
+        var obj = dragDrop.drag_drop_list[index];
         obj.elem.style['display'] = 'none';
         dragDrop.drag_drop_list[obj.index] = undefined;
     },
     // applies on handler_elem
-    startDragMouse: function (e) {
+    startDragMouse: function (e, index) {
         var evt = e || window.event;
-        var source = evt.target || evt.srcElement;
-        var obj = source.js_object;
+        var obj = dragDrop.drag_drop_list[index];
+//        var source = evt.target || evt.srcElement;
+//        var obj = source.js_object;
         obj.startDrag();
         obj.initialMouseX = evt.clientX;
         obj.initialMouseY = evt.clientY;

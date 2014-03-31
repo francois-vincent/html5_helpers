@@ -9,11 +9,11 @@
 <body>
     <div class="draggable" id="mywindow" windowTitle="grab me">
         <p class='text-shadow'>This is a draggable window !</p>
-        <a href="#" class="button">Click Me!</a>
+        <a href="#" class="button" onclick="document.getElementById('mywindow').innerHTML += '<p>New element added !</p>';">Click Me!</a>
     </div>
     <div class="draggable closable" id="mywindow2" windowTitle="close me" style="top: 400px">
         <p class='punched'>This is a closable window !</p>
-        <a href="#" class="button">Click Me!</a>
+        <a href="#" class="button" onclick="document.getElementById('mywindow2').innerHTML += '<p>New element added !</p>';">Click Me!</a>
     </div>
     <div class="draggable closable" id="mywindow3" windowTitle="close me" style="top: 200px">
         <p class='punched'>This is a closable window !</p>
