@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="draganddrop.js"></script>
+</head>
+<body>
+    <div class="draggable" id="mywindow" windowTitle="grab me">
+        <p class='text-shadow'>This is a draggable window !</p>
+        <a href="#" class="button">Click Me!</a>
+    </div>
+    <div class="draggable closable" id="mywindow2" windowTitle="close me">
+        <p class='punched'>This is a closable window !</p>
+        <a href="#" class="button">Click Me!</a>
+    </div>
+    <div class="draggable closable" id="mywindow3" windowTitle="close me">
+        <p class='punched'>This is a closable window !</p>
+        <a href="#" class="button">Click Me!</a>
+    </div>
+</body>
+<script>
+    window.onload = dragDrop.drag_drop_init();
+</script>
+</html>
