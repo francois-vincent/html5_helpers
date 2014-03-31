@@ -112,7 +112,7 @@ dragDrop = {
     releaseElement: function() {
         removeEventSimple(this, 'mousemove', dragDrop.dragMouse);
         removeEventSimple(this, 'mouseup', dragDrop.releaseElement);
-        this.className = this.className.replace(/ dragged/, '');
+        this.className = this.className.replace(/ dragged/g, '');
         this.js_object.draggedObject = null;
     }
 };
