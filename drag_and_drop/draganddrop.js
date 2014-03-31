@@ -33,6 +33,7 @@ dragDrop = {
     closeHTML: ['<a href="#" class="closeLink" id="','" onclick="dragDrop.closeElement(',')"><img class="icon-small" src="iconmonstr-x-mark-4-icon.svg"></a>'],
     allowed_position: ['absolute', 'fixed'],
     drag_drop_list: [],
+    default_title: 'Window ',
     drag_drop_init: function() {
         var elems = document.getElementsByClassName('draggable');
         for (var el=0; el<elems.length; el++) {
@@ -42,7 +43,7 @@ dragDrop = {
     constr: function(elem, index) {
         if (typeof elem == 'string')
             elem = document.getElementById(elem);
-        if (!(getStyle(elem, 'position') in dragDrop.allowed_position)) {
+        if (dragDrop.allowed_position.indexOf(getStyle(elem, 'position')) == -1) {
             elem.style['position'] = dragDrop.allowed_position[0];
         }
         this.elem = elem;
@@ -59,7 +60,7 @@ dragDrop = {
         var id_handler = 'id_handler_' + dragDrop.id_drag_drop;
         elem.innerHTML += dragDrop.handlerHTML[0]+id_handler+dragDrop.handlerHTML[1]+index+dragDrop.handlerHTML[2];
         this.handler_elem = document.getElementById(id_handler);
-        this.handler_elem.innerHTML = elem.getAttribute('windowTitle');
+        this.handler_elem.innerHTML = '<p class="handler_title">'+(elem.getAttribute('windowTitle') || dragDrop.default_title+dragDrop.id_drag_drop)+'</p>';
         this.handler_elem.js_object = this;
         this.draggedObject = undefined;
         this.startDrag = dragDrop.startDrag;
