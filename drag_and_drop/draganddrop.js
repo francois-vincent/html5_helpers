@@ -77,8 +77,6 @@ dragDrop = {
     startDragMouse: function (e, index) {
         var evt = e || window.event;
         var obj = dragDrop.drag_drop_list[index];
-//        var source = evt.target || evt.srcElement;
-//        var obj = source.js_object;
         obj.startDrag();
         obj.initialMouseX = evt.clientX;
         obj.initialMouseY = evt.clientY;
