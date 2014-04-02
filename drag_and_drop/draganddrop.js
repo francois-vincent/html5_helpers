@@ -34,6 +34,7 @@ dragDrop = {
     allowed_position: ['absolute', 'fixed'],
     drag_drop_list: [],
     default_title: 'Window ',
+    // static method that registers draggable windows
     drag_drop_init: function(element) {
         if (element)
             dragDrop.drag_drop_list.push(new dragDrop.constr(element, dragDrop.drag_drop_list.length))
@@ -44,6 +45,7 @@ dragDrop = {
             }
         }
     },
+    // constructor. creates a manager instance for each window
     constr: function(elem, index) {
         if (typeof elem == 'string')
             elem = document.getElementById(elem);
