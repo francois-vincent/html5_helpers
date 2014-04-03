@@ -123,3 +123,8 @@ dragDrop = {
         this.js_object.draggedObject = null;
     }
 };
+
+// automatic management of all 'draggable' classes
+window.addEventListener('load', function (){
+    dragDrop.drag_drop_init();
+});
