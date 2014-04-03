@@ -9,6 +9,7 @@
 <body>
     <div class="draggable" id="mywindow" windowTitle="grab me">
         <p class='text-shadow'>This is a draggable window!</p>
+        <p class='text-shadow'>(Windows can hover each other)</p>
         <a href="#" class="button" onclick="document.getElementById('mywindow').innerHTML += '<p>New element added!</p>';">Click Me!</a>
     </div>
     <div class="draggable closable" id="mywindow2" windowTitle="close me" style="top: 400px">
@@ -17,6 +18,7 @@
     </div>
     <div class="draggable closable" style="top: 200px; position: fixed;">
         <p class='punched'>This is a fixed closable window!</p>
+        <p class='punched'>(try move scroll bar)</p>
         <a href="#" class="button">Click Me!</a>
     </div>
     <div id="mywindow3" style="left: 600px; position:absolute">

@@ -31,6 +31,7 @@ dragDrop = {
     id_drag_drop: 0,
     handlerHTML: ['<div class="handler" id="', '" onmousedown="dragDrop.startDragMouse(event,',')"></div>'],
     closeHTML: ['<a href="#" class="closeLink" id="','" onclick="dragDrop.closeElement(',')"><img class="icon-small" src="iconmonstr-x-mark-4-icon.svg"></a>'],
+    // 'absolute' is the default position
     allowed_position: ['absolute', 'fixed'],
     drag_drop_list: [],
     default_title: 'Window ',
